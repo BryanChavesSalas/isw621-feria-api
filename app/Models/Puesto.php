@@ -26,7 +26,7 @@ class Puesto extends Model
     {
         $nombre = Str::camel($childType);
 
-        return preg_match('/[aeiou]$/', $nombre) === 1 ? $nombre . 's' : $nombre . 'es';
+        return preg_match('/[aeiou]$/', $nombre) === 1 ? $nombre.'s' : $nombre.'es';
     }
 
     /**
