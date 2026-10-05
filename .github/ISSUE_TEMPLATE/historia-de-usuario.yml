@@ -1,0 +1,19 @@
+name: Historia de usuario
+description: Nueva funcionalidad de la feria
+title: "[Feature]: "
+labels: ["feature"]
+body:
+  - type: textarea
+    id: contexto
+    attributes:
+      label: Contexto / Historia de usuario
+      description: "Como <rol>, quiero <acción>, para <beneficio>"
+    validations:
+      required: true
+  - type: textarea
+    id: detalles
+    attributes:
+      label: Detalles técnicos
+      description: API, datos, validaciones, pruebas y dependencias
+    validations:
+      required: true
