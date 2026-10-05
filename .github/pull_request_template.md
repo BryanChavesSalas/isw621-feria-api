@@ -10,7 +10,7 @@ M__ · <título del milestone>
 - [ ] Esquema: enum, migración, modelo, factory y relación en `Puesto`
 - [ ] Validaciones: Form Requests de crear y de actualizar
 - [ ] Endpoints: Resource, controlador y rutas
-- [ ] Pruebas: `tests/Feature/Api/V1/<Recurso>Test.php`
+- [ ] Pruebas: `tests/Feature/Api/V1/<Plural>Test.php`
 
 ## Cómo se probó
 
