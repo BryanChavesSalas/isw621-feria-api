@@ -50,6 +50,16 @@ class Puesto extends Model
 
     // M03 · resenas(): escriba su relación debajo de esta línea.
 
+    /**
+     * Reseñas del puesto.
+     *
+     * @return HasMany<Resena, $this>
+     */
+    public function resenas(): HasMany
+    {
+        return $this->hasMany(Resena::class);
+    }
+
     // M04 · apartados(): escriba su relación debajo de esta línea.
 
     // M05 · inspecciones(): escriba su relación debajo de esta línea.
