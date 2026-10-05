@@ -47,7 +47,7 @@ class Puesto extends Model
     // M01 · productos(): escriba su relación debajo de esta línea.
 
     // M02 · ofertas(): escriba su relación debajo de esta línea.
-/**
+    /**
      * Ofertas del puesto.
      *
      * @return HasMany<Oferta, $this>s

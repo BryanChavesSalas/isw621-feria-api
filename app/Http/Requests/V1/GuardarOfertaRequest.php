@@ -2,11 +2,9 @@
 
 namespace App\Http\Requests\V1;
 
-use App\Enums\Jornada;
+use App\Enums\TipoDeOferta;
 use App\Models\Puesto;
-use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
-
 final class GuardarDegustacionRequest extends FormRequest
 {
     /** En esta prueba no hay autenticación. */
@@ -22,14 +20,14 @@ final class GuardarDegustacionRequest extends FormRequest
      */
     public function rules(): array
     {
-       $puesto = $this->route('puesto');
- 
-     return [
-    'titulo' => ['required', 'string', 'max:60', Rule::unique('ofertas', 'titulo')->where('puesto_id', $puesto instanceof Puesto ? $puesto->id : null)],
-    'descuento_porcentaje' => ['required', 'integer:strict', 'between:5,50'],
-    'tipo' => ['required', Rule::enum(TipoDeOferta::class)],
-    'vigente' => ['sometimes', 'boolean:strict'],
-    ];
+        $puesto = $this->route('puesto');
+
+        return [
+            'titulo' => ['required', 'string', 'max:60', Rule::unique('ofertas', 'titulo')->where('puesto_id', $puesto instanceof Puesto ? $puesto->id : null)],
+            'descuento_porcentaje' => ['required', 'integer:strict', 'between:5,50'],
+            'tipo' => ['required', Rule::enum(TipoDeOferta::class)],
+            'vigente' => ['sometimes', 'boolean:strict'],
+        ];
 
     }
 }
