@@ -26,7 +26,7 @@ class Puesto extends Model
     {
         $nombre = Str::camel($childType);
 
-        return preg_match('/[aeiou]$/', $nombre) === 1 ? $nombre.'s' : $nombre.'es';
+        return preg_match('/[aeiou]$/', $nombre) === 1 ? $nombre . 's' : $nombre . 'es';
     }
 
     /**
@@ -61,6 +61,15 @@ class Puesto extends Model
     // M08 · recetas(): escriba su relación debajo de esta línea.
 
     // M09 · avisos(): escriba su relación debajo de esta línea.
+    /**
+     * Avisos del puesto.
+     *
+     * @return HasMany<Aviso, $this>
+     */
+    public function avisos(): HasMany
+    {
+        return $this->hasMany(Aviso::class);
+    }
 
     // M10 · colaboradores(): escriba su relación debajo de esta línea.
 
