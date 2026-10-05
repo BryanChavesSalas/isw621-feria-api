@@ -1,0 +1,8 @@
+return [
+ 'id' => $this->id,
+ 'puesto_id' => $this->puesto_id,
+ 'nombre' => $this->nombre,
+ 'precio_colones' => $this->precio_colones,
+ 'unidad' => $this->unidad,
+ 'disponible' => $this->disponible,
+];
