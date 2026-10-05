@@ -30,7 +30,7 @@ Como <miembros_asociación> quiero <anunciar_ofertas> para <ventas_del_jueves>.
 - Después: <las ofertas deben de ser bien diseñadas para cualquier tipo de pantalla para ajustarce a los dispostivos >
 
 ## 5. Prioridad MoSCoW de este milestone
-
+s
 | Elemento | Prioridad |
 | --- | --- |
 | <Elemento 1 del sub-issue> |  Should |
