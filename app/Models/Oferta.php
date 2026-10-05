@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 #[Table('ofertas')]
-#[Fillable(['titulo', 'descuento_porcentaje', 'tipo', 'vigente'])]
+#[Fillable(['puesto_id', 'titulo', 'descuento_porcentaje', 'tipo', 'vigente'])]
 class Oferta extends Model
 {
     /** @use HasFactory<OfertaFactory> */
