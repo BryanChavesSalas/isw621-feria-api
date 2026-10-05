@@ -57,6 +57,15 @@ class Puesto extends Model
     // M06 · certificaciones(): escriba su relación debajo de esta línea.
 
     // M07 · cosechas(): escriba su relación debajo de esta línea.
+    /**
+     * Cosechas del puesto.
+     *
+     * @return HasMany<Cosecha, $this>
+     */
+    public function cosechas(): HasMany
+    {
+        return $this->hasMany(Cosecha::class);
+    }
 
     // M08 · recetas(): escriba su relación debajo de esta línea.
 
