@@ -11,7 +11,7 @@ enum Jornada: string
 
 enum TipoDeCertificacion: string
 {
-case Organico = 'organico';
-case BuenasPracticas = 'buenas_practicas';
-case ComercioJusto = 'comercio_justo';
+    case Organico = 'organico';
+    case BuenasPracticas = 'buenas_practicas';
+    case ComercioJusto = 'comercio_justo';
 }

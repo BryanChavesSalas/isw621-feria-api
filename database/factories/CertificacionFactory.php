@@ -34,4 +34,3 @@ class CertificacionFactory extends Factory
         return $this->state(['verificada' => false]);
     }
 }
-
