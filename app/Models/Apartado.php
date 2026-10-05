@@ -3,8 +3,10 @@
 namespace App\Models;
 
 use App\Enums\FranjaDeEntrega;
+use Database\Factories\ApartadoFactory;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Attributes\Table;
+use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -14,13 +16,18 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Apartado extends Model
 {
     /** @use HasFactory<ApartadoFactory> */
-    use HasFactory{
+    use HasFactory {
         HasFactory::newFactory as traitNewFactory;
     }
 
-    protected static function newFactory()
+    /**
+     * Define la fábrica correspondiente para el modelo.
+     *
+     * @return ApartadoFactory
+     */
+    protected static function newFactory(): Factory
     {
-        return \Database\Factories\ApartadoFactory::new();
+        return ApartadoFactory::new();
     }
 
     /**
