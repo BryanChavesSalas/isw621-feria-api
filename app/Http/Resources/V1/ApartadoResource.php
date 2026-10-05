@@ -2,7 +2,6 @@
 
 namespace App\Http\Resources\V1;
 
-use App\Models\Apartado;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 

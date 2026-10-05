@@ -45,7 +45,7 @@ final class ApartadosTest extends TestCase
             ->assertJsonPath('data.cliente', 'Beto')
             ->assertJsonPath('data.confirmado', true)
             ->json('data.id');
-            
+
         $respuesta->assertHeader('Location', url("/api/v1/puestos/{$puesto->id}/apartados/{$id}"));
         $this->assertDatabaseHas('apartados', ['id' => $id, 'puesto_id' => $puesto->id]);
     }

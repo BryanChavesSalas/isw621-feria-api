@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Api\V1;
 
-use App\Http\Requests\V1\ActualizarApartadoRequest; 
+use App\Http\Requests\V1\ActualizarApartadoRequest;
 use App\Http\Requests\V1\GuardarApartadoRequest;
 use App\Http\Resources\V1\ApartadoResource;
 use App\Models\Apartado;

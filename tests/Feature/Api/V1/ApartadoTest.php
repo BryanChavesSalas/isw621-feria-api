@@ -2,7 +2,6 @@
 
 namespace Tests\Feature\Api\V1;
 
-use App\Enums\FranjaDeEntrega;
 use App\Models\Apartado;
 use App\Models\Puesto;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -29,10 +28,10 @@ class ApartadoTest extends TestCase
 
         // Verifica código 201 Created
         $response->assertStatus(201);
-        
+
         // Verifica que se devuelva la estructura del recurso
         $response->assertJsonStructure([
-            'data' => ['id', 'cliente', 'cantidad', 'entrega']
+            'data' => ['id', 'cliente', 'cantidad', 'entrega'],
         ]);
 
         // Verifica que exista el encabezado Location exigido
@@ -77,7 +76,7 @@ class ApartadoTest extends TestCase
         $response = $this->getJson("/api/v1/puestos/{$puesto->id}/apartados");
 
         $response->assertStatus(200);
-        
+
         // Comprobamos que solo trajo los 2 confirmados
         $response->assertJsonCount(2, 'data');
 
@@ -111,15 +110,15 @@ class ApartadoTest extends TestCase
         $apartado = Apartado::factory()->create(['puesto_id' => $puesto->id, 'cantidad' => 10]);
 
         $response = $this->patchJson("/api/v1/puestos/{$puesto->id}/apartados/{$apartado->id}", [
-            'cantidad' => 1
+            'cantidad' => 1,
         ]);
 
         $response->assertStatus(200);
-        
+
         // Verifica el cambio en la base de datos
         $this->assertDatabaseHas('apartados', [
             'id' => $apartado->id,
-            'cantidad' => 1
+            'cantidad' => 1,
         ]);
     }
 
@@ -135,7 +134,7 @@ class ApartadoTest extends TestCase
 
         // Verifica código 204 No Content
         $response->assertStatus(204);
-        
+
         // Verifica que el cuerpo de la respuesta esté vacío
         $this->assertEmpty($response->getContent());
 

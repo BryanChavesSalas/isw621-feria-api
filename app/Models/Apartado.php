@@ -22,7 +22,7 @@ class Apartado extends Model
     {
         return \Database\Factories\ApartadoFactory::new();
     }
- 
+
     /**
      * Tipos de los atributos: el enum y el booleano llegan ya convertidos.
      *

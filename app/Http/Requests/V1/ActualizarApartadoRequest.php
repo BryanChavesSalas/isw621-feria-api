@@ -6,9 +6,8 @@ use App\Enums\FranjaDeEntrega;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
-final class ActualizarApartadoRequest extends FormRequest 
+final class ActualizarApartadoRequest extends FormRequest
 {
-
     public function authorize(): bool
     {
         return true;
@@ -30,12 +29,12 @@ final class ActualizarApartadoRequest extends FormRequest
 
         return [
             'cliente' => [
-                'sometimes', 
-                'string', 
-                'max:60', 
+                'sometimes',
+                'string',
+                'max:60',
                 Rule::unique('apartados', 'cliente')
                     ->where('puesto_id', $puestoId)
-                    ->ignore($apartadoId)
+                    ->ignore($apartadoId),
             ],
             'cantidad' => ['sometimes', 'integer', 'between:1,50'], // Removido :strict para compatibilidad con tipos del Test
             'entrega' => ['sometimes', Rule::enum(FranjaDeEntrega::class)],

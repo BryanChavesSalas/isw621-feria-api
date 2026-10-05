@@ -2,9 +2,8 @@
 
 namespace Database\Factories;
 
-use App\Enums\Jornada;
-use App\Models\Apartado;
 use App\Enums\FranjaDeEntrega;
+use App\Models\Apartado;
 use App\Models\Puesto;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
