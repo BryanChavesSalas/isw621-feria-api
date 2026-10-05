@@ -65,4 +65,13 @@ class Puesto extends Model
     // M10 · colaboradores(): escriba su relación debajo de esta línea.
 
     // M11 · canastas(): escriba su relación debajo de esta línea.
+    /**
+     * Canastas del puesto.
+     *
+     * @return HasMany<Canasta, $this>
+     */
+    public function canastas(): HasMany
+    {
+        return $this->hasMany(Canasta::class);
+    }
 }
