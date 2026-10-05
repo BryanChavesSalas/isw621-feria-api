@@ -2,19 +2,19 @@
 
 namespace App\Models;
 
-use App\Enums\Jornada;
-use Database\Factories\DegustacionFactory;
+use App\Enums\TipoDeOferta;
+use Database\Factories\OfertaFactory;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Attributes\Table;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-#[Table('degustaciones')]
-#[Fillable(['nombre', 'porciones', 'jornada', 'activa'])]
-class Degustacion extends Model
+#[Table('ofertas')]
+#[Fillable(['titulo', 'descuento_porcentaje', 'tipo', 'vigente'])]
+class Oferta extends Model
 {
-    /** @use HasFactory<DegustacionFactory> */
+    /** @use HasFactory<OfertaFactory> */
     use HasFactory;
 
     /**
@@ -28,12 +28,11 @@ class Degustacion extends Model
             'descuento_porcentaje' => 'integer',
             'tipo' => TipoDeOferta::class,
             'vigente' => 'boolean',
-
         ];
     }
 
     /**
-     * Puesto al que pertenece la degustación.
+     * Puesto al que pertenece la oferta.
      *
      * @return BelongsTo<Puesto, $this>
      */
