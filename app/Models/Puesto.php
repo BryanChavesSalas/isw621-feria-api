@@ -53,6 +53,15 @@ class Puesto extends Model
     // M04 · apartados(): escriba su relación debajo de esta línea.
 
     // M05 · inspecciones(): escriba su relación debajo de esta línea.
+    /**
+     * Inspecciones del puesto.
+     *
+     * @return HasMany<Inspeccion, $this>
+     */
+    public function inspecciones(): HasMany
+    {
+        return $this->hasMany(Inspeccion::class);
+    }
 
     // M06 · certificaciones(): escriba su relación debajo de esta línea.
 
