@@ -46,6 +46,17 @@ class Puesto extends Model
 
     // M01 · productos(): escriba su relación debajo de esta línea.
 
+    // M01 · productos(): escriba su relación debajo de esta línea.
+    /**
+     * Productos del puesto.
+     *
+     * @return HasMany<Producto, $this>
+     */
+    public function productos(): HasMany
+    {
+        return $this->hasMany(Producto::class);
+    }
+
     // M02 · ofertas(): escriba su relación debajo de esta línea.
 
     // M03 · resenas(): escriba su relación debajo de esta línea.
