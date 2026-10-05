@@ -63,6 +63,15 @@ class Puesto extends Model
     // M09 · avisos(): escriba su relación debajo de esta línea.
 
     // M10 · colaboradores(): escriba su relación debajo de esta línea.
+    /**
+     * Colaboradores del puesto.
+     *
+     * @return HasMany<Colaborador, $this>
+     */
+    public function colaboradores(): HasMany
+    {
+        return $this->hasMany(Colaborador::class);
+    }
 
     // M11 · canastas(): escriba su relación debajo de esta línea.
 }
