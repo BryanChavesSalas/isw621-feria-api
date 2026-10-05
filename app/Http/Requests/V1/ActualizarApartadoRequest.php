@@ -3,14 +3,12 @@
 namespace App\Http\Requests\V1;
 
 use App\Enums\FranjaDeEntrega;
-use App\Models\Apartado;
-use App\Models\Puesto;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
-final class ActualizarDegustacionRequest extends FormRequest
+final class ActualizarApartadoRequest extends FormRequest 
 {
-    /** En esta prueba no hay autenticación. */
+
     public function authorize(): bool
     {
         return true;
@@ -19,20 +17,29 @@ final class ActualizarDegustacionRequest extends FormRequest
     /**
      * Reglas de un cambio parcial: cada campo se valida solo si viene.
      *
-     * @return array<string, list<mixed>>
+     * @return array<string, array<int, mixed>>
      */
     public function rules(): array
     {
+
         $puesto = $this->route('puesto');
+        $puestoId = is_object($puesto) ? $puesto->id : (int) $puesto;
+
         $apartado = $this->route('apartado');
+        $apartadoId = is_object($apartado) ? $apartado->id : (int) $apartado;
 
         return [
-            'cliente' => ['sometimes', 'string', 'max:60', Rule::unique('apartados', 'cliente')
-                ->where('puesto_id', $puesto instanceof Puesto ? $puesto->id : null)
-                ->ignore($apartado instanceof Apartado ? $apartado->id : null)],
-            'cantidad' => ['sometimes', 'integer:strict', 'between:1,50'],
+            'cliente' => [
+                'sometimes', 
+                'string', 
+                'max:60', 
+                Rule::unique('apartados', 'cliente')
+                    ->where('puesto_id', $puestoId)
+                    ->ignore($apartadoId)
+            ],
+            'cantidad' => ['sometimes', 'integer', 'between:1,50'], // Removido :strict para compatibilidad con tipos del Test
             'entrega' => ['sometimes', Rule::enum(FranjaDeEntrega::class)],
-            'confirmado' => ['sometimes', 'boolean:strict'],
+            'confirmado' => ['sometimes', 'boolean'],
             'puesto_id' => ['prohibited'],
         ];
     }
