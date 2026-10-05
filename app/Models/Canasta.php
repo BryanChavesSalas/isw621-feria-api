@@ -2,8 +2,8 @@
 
 namespace App\Models;
 
-use App\Database\Factories\CanastaFactory;
 use App\Enums\TamanoDeCanasta;
+use Database\Factories\CanastaFactory;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Attributes\Table;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
